@@ -2,40 +2,27 @@
 
 import React from 'react';
 import Header from './Header';
-import ContestPreview from './ContestPreview';
-import axios from 'axios';
+import ContestList from './ContestList';
 
-class App extends React.Component{
-  state={
+class App extends React.Component {
+  state = {
     pageHeader: 'Naming Contests',
-    contests: []
-  }
-  componentDidMount(){
-    // ajax ...use axios library
-    axios.get('/api/contests')
-      .then(resp => {
-        this.setState({
-          contests: resp.data.contests
-        });
-      })
-      .catch(console.error);
+    contests: this.props.initialContests
+  };
+  componentDidMount() {
 
   }
-  componentWillUnmount(){
-
+  componentWillUnmount() {
+    // clean timers, listeners
   }
-  //everytime use .map u should provide key with .id
-  render(){
+  render() {
     return (
       <div className="App">
-        <Header message = {this.state.pageHeader} />
-        <div>
-          {this.state.contests.map(contest =>
-            <ContestPreview key={contest.id} {...contest} />
-          )}
-        </div>
+        <Header message={this.state.pageHeader} />
+        <ContestList contests={this.stats.contests} />
       </div>
     );
   }
 }
+
 export default App;
