@@ -1,7 +1,8 @@
-## mern-project
+# MERN-project
 
-# Adopted from lynda.com/ <samerbuna @ github>
+: [adopted from lynda.com/]:(https://github.com/samerbuna)
 
-# how to use?
+### how to use?
 npm start
+npm run dev
 see the details in package.json "scripts"

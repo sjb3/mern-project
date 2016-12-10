@@ -1,8 +1,11 @@
 'use strict';
 
-import axios from 'axios';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-export const fetchContest = contestId => {
-  return axios.get(`/api/contests/${contestId}`)
-              .then(resp => resp.data);
-};
+import App from './components/App';
+
+ReactDOM.render(
+  <App initialData={window.initialData} />,
+  document.getElementById('root')
+);
